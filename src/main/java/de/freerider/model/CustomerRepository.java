@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import de.freerider.repository.CrudRepository;
 
 @Component
+public
 class CustomerRepository implements CrudRepository<Customer, String> {
 	@Autowired             
 	CrudRepository<Customer,String> customerManager; 
