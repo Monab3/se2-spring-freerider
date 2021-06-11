@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 import org.springframework.stereotype.Component;
 
 import de.freerider.model.Customer;
@@ -16,18 +18,15 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 	private HashMap<String,Customer> customerList = new HashMap<String,Customer> ();
 	@Override
 	public <S extends Customer> S save(S entity) {
-		System.out.println("HAllo");
 		String id;
 		if(entity.getId() == null || entity.getId().equals("")) {
 			while(true) {
 			id = idGen.nextId();
-			System.out.println("id. "+id);
 			if(customerList.containsKey(id)==false) {
 				break;
 			}
 		}
 		entity.setId(id);
-		System.out.println("id is set");
 		}
 		customerList.put(entity.getId(), entity);
 		return entity;
@@ -57,7 +56,10 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 	@Override 
 	public Iterable<Customer> findAll() {
 		ArrayList <Customer> a = new ArrayList<>();
-		a = (ArrayList<Customer>) customerList.values();
+		for(Customer i: customerList.values()) {
+			a.add(i);
+		}
+		
 		return a;
 	}
 
