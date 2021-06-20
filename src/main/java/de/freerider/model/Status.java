@@ -1,5 +1,5 @@
 package de.freerider.model;
 
-enum Status {
+public enum Status {
 	NEW, INREGISTRATION, ACTIVE, SUSPENDED, DELETED
 }

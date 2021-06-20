@@ -20,6 +20,7 @@ public class Customer {
 	}
 
 	public void setId(String id) {
+		if((id !="" && id!=null&& this.id == null) || id ==null)
 		this.id = id;
 	}
 
@@ -28,7 +29,10 @@ public class Customer {
 	}
 
 	public void setLastName(String lastName) {
+		if(lastName!=null)
 		this.lastName = lastName;
+		else
+			this.lastName="";
 	}
 
 	public String getFirstName() {
@@ -36,7 +40,10 @@ public class Customer {
 	}
 
 	public void setFirstName(String firstName) {
+		if(firstName!=null)
 		this.firstName = firstName;
+		else
+			this.firstName="";
 	}
 
 	public String getContact() {
@@ -44,7 +51,10 @@ public class Customer {
 	}
 
 	public void setContact(String contact) {
+		if(contact!=null)
 		this.contact = contact;
+		else
+			this.contact="";
 	}
 
 	public Status getStatus() {
