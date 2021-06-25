@@ -1,4 +1,4 @@
-package de.freerider;
+package de.freerider.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import de.freerider.model.Customer;
 
-public class costumerTests {
+public class CostumerTests {
 	private Customer mats;
 	private Customer thomas;
 
@@ -30,7 +30,7 @@ public class costumerTests {
 		mats.setId("12345");
 		assertEquals("12345", mats.getId());
 		thomas.setId("");
-		assertNull(thomas.getId());
+		assertNotNull(thomas.getId());
 		thomas.setId(null);
 		assertNull(thomas.getId());
 	}

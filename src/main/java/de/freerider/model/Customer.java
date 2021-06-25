@@ -20,7 +20,7 @@ public class Customer {
 	}
 
 	public void setId(String id) {
-		if((id !="" && id!=null&& this.id == null) || id ==null)
+		if((/*id !="" &&*/ id!=null && this.id == null) || id == null)
 		this.id = id;
 	}
 
