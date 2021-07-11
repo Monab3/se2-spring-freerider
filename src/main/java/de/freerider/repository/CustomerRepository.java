@@ -1,15 +1,18 @@
 package de.freerider.repository;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import de.freerider.model.Customer;
-
+//import de.freerider.model.Customer;
+import de.freerider.datamodel.Customer;
 
 @Component
+@Qualifier("CustomerRepository_Impl")
 class CustomerRepository implements CrudRepository<Customer, String> {
 	
 	private final IDGenerator idGen = new IDGenerator( "C", IDGenerator.IDTYPE.NUM, 6 );
@@ -96,11 +99,14 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 				list.add(customerList.get(id));
 		}
 		return list;
+
+
 	}
 
 	@Override
 	public long count() {
 		// TODO Auto-generated method stub
+
 		return customerList.size();
 	}
 
@@ -145,14 +151,13 @@ class CustomerRepository implements CrudRepository<Customer, String> {
 			delete(c);
 		}
 		
+
 	}
 
 	@Override
 	public void deleteAll() {
+
 		customerList.clear();
 		
 	}
-
-
-	
 }

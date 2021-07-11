@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import de.freerider.model.Customer;
+import de.freerider.datamodel.Customer;
 
 @SpringBootTest
 public class CustomerRepositoryTest {
@@ -24,7 +24,7 @@ public class CustomerRepositoryTest {
 // two sample customers
 	private Customer mats;
 	private Customer thomas;
-
+	
 	@BeforeEach
 	public void setUpFirst() {
 		mats = new Customer("Mats", "Becher", "monabecher@gmx.de");
@@ -33,9 +33,10 @@ public class CustomerRepositoryTest {
 
 	@Test
 	public void saveTest() {
+		customerRepository.deleteAll();
 		// leeres Repository bevor der Speicherung
 		assertEquals(0, customerRepository.count());
-
+		System.out.println(customerRepository.findAll());
 		customerRepository.save(mats);
 		customerRepository.save(thomas);
 		assertEquals(2, customerRepository.count());

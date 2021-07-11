@@ -1,4 +1,4 @@
-package de.freerider.model;
+package de.freerider.datamodel;
 
 public class Customer {
 	private String id;
@@ -12,7 +12,7 @@ public class Customer {
 		setFirstName(firstName);
 		setContact(contact);
 		setId(null);
-		setStatus(Status.NEW);
+		setStatus(Status.New);
 	}
 
 	public String getId() {
@@ -20,7 +20,7 @@ public class Customer {
 	}
 
 	public void setId(String id) {
-		if((/*id !="" &&*/ id!=null && this.id == null) || id == null)
+		if(( id!=null && this.id == null) || id == null)
 		this.id = id;
 	}
 

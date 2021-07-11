@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import de.freerider.model.Customer;
+import de.freerider.datamodel.Customer;
 
 public class CostumerTests {
 	private Customer mats;
@@ -92,21 +92,21 @@ public class CostumerTests {
 
 	@Test
 	public void testStatusInitial() {
-		de.freerider.model.Status n = de.freerider.model.Status.NEW;
+		de.freerider.datamodel.Status n = de.freerider.datamodel.Status.New;
 		assertEquals(n, mats.getStatus());
 	}
 
 	@Test
 	public void testSetStatus() {
-		mats.setStatus(de.freerider.model.Status.ACTIVE);
-		assertEquals(de.freerider.model.Status.ACTIVE, mats.getStatus());
-		mats.setStatus(de.freerider.model.Status.DELETED);
-		assertEquals(de.freerider.model.Status.DELETED, mats.getStatus());
-		mats.setStatus(de.freerider.model.Status.INREGISTRATION);
-		assertEquals(de.freerider.model.Status.INREGISTRATION, mats.getStatus());
-		mats.setStatus(de.freerider.model.Status.SUSPENDED);
-		assertEquals(de.freerider.model.Status.SUSPENDED, mats.getStatus());
-		mats.setStatus(de.freerider.model.Status.NEW);
-		assertEquals(de.freerider.model.Status.NEW, mats.getStatus());
+		mats.setStatus(de.freerider.datamodel.Status.Active);
+		assertEquals(de.freerider.datamodel.Status.Active, mats.getStatus());
+		mats.setStatus(de.freerider.datamodel.Status.Deleted);
+		assertEquals(de.freerider.datamodel.Status.Deleted, mats.getStatus());
+		mats.setStatus(de.freerider.datamodel.Status.InRegistration);
+		assertEquals(de.freerider.datamodel.Status.InRegistration, mats.getStatus());
+		mats.setStatus(de.freerider.datamodel.Status.Suspended);
+		assertEquals(de.freerider.datamodel.Status.Suspended, mats.getStatus());
+		mats.setStatus(de.freerider.datamodel.Status.New);
+		assertEquals(de.freerider.datamodel.Status.New, mats.getStatus());
 	}
 }
